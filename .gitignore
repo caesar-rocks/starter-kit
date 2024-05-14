@@ -1,0 +1,12 @@
+# Environment variables
+.env
+
+# NPM modules
+node_modules
+
+# Temporary folder 
+tmp
+
+# Templ generated files
+views/**/*_templ.go
+views/**/*_templ.txt
