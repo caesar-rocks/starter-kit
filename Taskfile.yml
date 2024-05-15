@@ -3,6 +3,7 @@ version: "3"
 tasks:
   install:
     cmds:
+      - templ generate
       - go get ./...
       - go mod tidy
       - go mod download
