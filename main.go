@@ -11,27 +11,29 @@ import (
 )
 
 const (
-	possibleArgs = "--serve --migrate --rollback --reset --seed"
+	possibleArgs = "serve migrations:run migrations:rollback migrations:reset db:seed list:routes"
 )
 
 func main() {
 	args := os.Args
 	if len(args) != 2 || !strings.Contains(possibleArgs, args[1]) {
-		fmt.Println("Usage: go run caesar.go [--serve | --migrate | --rollback | --reset | --seed]")
+		fmt.Printf("Usage: go run caesar.go [%s]\n", possibleArgs)
 		os.Exit(1)
 	}
 
 	switch args[1] {
-	case "--serve":
+	case "serve":
 		env := config.ProvideEnvironmentVariables()
 		config.ProvideApp(env).Run()
-	case "--migrate":
+	case "list:routes":
+		listRoutes()
+	case "migrations:run":
 		getDB().Migrate(migrations.Migrations)
-	case "--rollback":
+	case "migrations:rollback":
 		getDB().Rollback(migrations.Migrations)
-	case "--reset":
+	case "migrations:reset":
 		getDB().Reset(migrations.Migrations)
-	case "--seed":
+	case "db:seed":
 		getDB().Seed()
 	}
 }
@@ -40,4 +42,17 @@ func getDB() *orm.Database {
 	env := config.ProvideEnvironmentVariables()
 	db := config.ProvideDatabase(env)
 	return db
+}
+
+func listRoutes() {
+	env := config.ProvideEnvironmentVariables()
+	app := config.ProvideApp(env)
+	router := app.RetrieveRouter()
+
+	fmt.Println("Method\tPattern")
+	fmt.Println("------\t-------")
+
+	for _, route := range router.Routes {
+		fmt.Printf("%s\t%s\n", route.Method, route.Pattern)
+	}
 }

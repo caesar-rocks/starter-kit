@@ -3,14 +3,18 @@ package config
 import (
 	"starter_kit/views/pages"
 
-	"github.com/caesar-rocks/core"
+	caesar "github.com/caesar-rocks/core"
 )
+
+func authMiddleware(ctx *caesar.CaesarCtx) error {
+	return nil
+}
 
 func RegisterRoutes(
 // Inject your controllers here...
-) *core.Router {
-	router := core.NewRouter()
-	router.Render("/", pages.WelcomePage())
+) *caesar.Router {
+	router := caesar.NewRouter()
+	router.Render("/", pages.WelcomePage()).Use(authMiddleware)
 
 	return router
 }

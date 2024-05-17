@@ -2,9 +2,11 @@ module starter_kit
 
 go 1.22.2
 
+replace github.com/caesar-rocks/core => ../core
+
 require (
 	github.com/a-h/templ v0.2.680
-	github.com/caesar-rocks/core v0.0.0-20240513190840-ed2b339b6a94
+	github.com/caesar-rocks/core v0.0.0-00010101000000-000000000000
 	github.com/caesar-rocks/orm v0.0.0-20240513190416-c02d9d7be742
 	github.com/uptrace/bun v1.2.1
 )
