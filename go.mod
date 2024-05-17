@@ -2,17 +2,15 @@ module starter_kit
 
 go 1.22.2
 
-replace github.com/caesar-rocks/core => ../core
-
 require (
-	github.com/a-h/templ v0.2.680
-	github.com/caesar-rocks/core v0.0.0-00010101000000-000000000000
+	github.com/caesar-rocks/core v0.0.0-20240517092709-a2c2bc523dc6
 	github.com/caesar-rocks/orm v0.0.0-20240513190416-c02d9d7be742
 	github.com/uptrace/bun v1.2.1
 )
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
+	github.com/a-h/templ v0.2.680 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
 	github.com/charmbracelet/lipgloss v0.10.0 // indirect
 	github.com/charmbracelet/log v0.4.0 // indirect
