@@ -3,7 +3,7 @@ tmp_dir = "tmp"
 
 [build]
   bin = "./tmp/caesar serve"
-  cmd="templ generate && npx tailwindcss -i ./views/app.css -o public/styles.css && go build -o ./tmp/caesar ."
+  cmd="templ generate && npx tailwindcss -i ./views/app.css -o ./public/assets/styles.css && go build -o ./tmp/caesar ."
 
   delay = 20
   exclude_dir = ["public/assets", "tmp", "node_modules"]
