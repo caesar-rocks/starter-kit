@@ -28,12 +28,13 @@ and then start your development setup by launching these three commands (in sepa
 
 ````bash
 task air
-``
+```
 
 ```bash
 task css
-````
+```
 
 ```bash
 task templ
 ```
+````
