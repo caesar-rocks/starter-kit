@@ -24,8 +24,16 @@ Run your migrations:
 caesar migrations:migrate
 ```
 
-and then start your development server:
+and then start your development setup by launching these three commands (in separate terminals):
+
+````bash
+task air
+``
 
 ```bash
-caesar dev
+task css
+````
+
+```bash
+task templ
 ```
