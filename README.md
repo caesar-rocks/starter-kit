@@ -26,7 +26,7 @@ caesar migrations:migrate
 
 and then start your development setup by launching these three commands (in separate terminals):
 
-````bash
+```bash
 task air
 ```
 
@@ -37,4 +37,3 @@ task css
 ```bash
 task templ
 ```
-````
