@@ -4,7 +4,7 @@ go 1.22.2
 
 require (
 	github.com/caesar-rocks/core v0.0.0-20240517092709-a2c2bc523dc6
-	github.com/caesar-rocks/orm v0.0.0-20240513190416-c02d9d7be742
+	github.com/caesar-rocks/orm v0.0.2
 	github.com/uptrace/bun v1.2.1
 )
 
