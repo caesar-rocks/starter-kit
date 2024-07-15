@@ -6,7 +6,8 @@ import (
 	caesar "github.com/caesar-rocks/core"
 )
 
-func authMiddleware(ctx *caesar.CaesarCtx) error {
+func authMiddleware(ctx *caesar.Context) error {
+	ctx.Next()
 	return nil
 }
 
